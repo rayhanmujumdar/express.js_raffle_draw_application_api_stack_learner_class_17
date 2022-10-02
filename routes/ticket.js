@@ -33,7 +33,7 @@ router
   });
 
 router
-  .route("/t/:username")
+  .route("/u/:username")
   .get((req,res) => {
     const {username} = req.params
     const userTicket = myDb.findByUsername(username)
