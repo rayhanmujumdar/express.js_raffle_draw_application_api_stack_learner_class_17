@@ -48,18 +48,18 @@ class MyDB {
       /**
        * @param {Ticket} ticket
        */
-      (ticket) => ticket.userName === userName
+      (ticket) => ticket.username === userName
     );
     return findTicketName;
   }
   /**
    * @param {string} ticketId
-   * @param {{userName: string,price: number}} ticketBody
+   * @param {{username: string,price: number}} ticketBody
    * @return {Ticket}
    */
   updateById(ticketId, ticketBody) {
     const findUpdateData = this.findById(ticketId);
-    findUpdateData.userName = ticketBody.userName || findUpdateData.userName;
+    findUpdateData.username = ticketBody.username || findUpdateData.username;
     findUpdateData.price = ticketBody.price || findUpdateData.price;
     findUpdateData.updatedAt = new Date();
     return findUpdateData;
@@ -92,18 +92,10 @@ class MyDB {
         winnerIndexes[count++] = this.tickets[randomIndex];
       }
     }
-    console.log(winnerIndexes)
     return winnerIndexes
   }
 }
 
 const myDB = new MyDB();
-myDB.create('rayhan',10)
-myDB.create('sabbir',10)
-myDB.create('Rakib',10)
-myDB.create('rahat',10)
-// myDB.bulkCreate("rayhan", 10, 5);
-// console.log(myDB.tickets)
-// console.log(myDB.findByUsername('rayhan'))
-myDB.draw(3);
 module.exports = myDB;
+  

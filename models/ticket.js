@@ -6,7 +6,7 @@ class Ticket {
    */
     constructor(userName,price){
         this.ticketId = shortId.generate()
-        this.userName = userName
+        this.username = userName
         this.price = price
         this.createAt = new Date()
         this.updateTime = new Date()
